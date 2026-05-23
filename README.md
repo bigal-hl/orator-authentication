@@ -1,5 +1,7 @@
 # Orator Authentication
 
+> **[&#9654; Read the Orator-Authentication Documentation](https://stevenvelozo.github.io/orator-authentication/)** &mdash; interactive docs with the full API reference.
+
 > Server-side cookie-based session authentication with pluggable authenticator and optional OAuth/OIDC support
 
 Orator Authentication is a Fable service provider that adds cookie-based session management to any Orator API server. Plug in your own credential verification function, or use the built-in allow-all authenticator during development. For federated identity, add OAuth 2.0 / OpenID Connect login via any OIDC provider, or use the dedicated MSAL provider for advanced Microsoft/Exchange scenarios.
