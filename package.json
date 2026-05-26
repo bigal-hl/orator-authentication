@@ -29,14 +29,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/stevenvelozo/orator-authentication.git"
+		"url": "git+https://github.com/fable-retold/orator-authentication.git"
 	},
 	"author": "steven velozo <steven@velozo.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/stevenvelozo/orator-authentication/issues"
+		"url": "https://github.com/fable-retold/orator-authentication/issues"
 	},
-	"homepage": "https://github.com/stevenvelozo/orator-authentication#readme",
+	"homepage": "https://github.com/fable-retold/orator-authentication#readme",
 	"dependencies": {
 		"fable-serviceproviderbase": "^3.0.19"
 	},

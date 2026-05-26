@@ -1,6 +1,6 @@
 # Orator Authentication
 
-> **[&#9654; Read the Orator-Authentication Documentation](https://stevenvelozo.github.io/orator-authentication/)** &mdash; interactive docs with the full API reference.
+> **[&#9654; Read the Orator-Authentication Documentation](https://fable-retold.github.io/orator-authentication/)** &mdash; interactive docs with the full API reference.
 
 > Server-side cookie-based session authentication with pluggable authenticator and optional OAuth/OIDC support
 
@@ -146,11 +146,11 @@ Full documentation is available in the [`docs`](./docs) folder, or served locall
 
 ## Related Packages
 
-- [orator](https://github.com/stevenvelozo/orator) - API server abstraction for REST and IPC
-- [orator-serviceserver-restify](https://github.com/stevenvelozo/orator-serviceserver-restify) - Restify service server
-- [pict-sessionmanager](https://github.com/stevenvelozo/pict-sessionmanager) - Client-side session manager for Pict applications
-- [fable](https://github.com/stevenvelozo/fable) - Application services framework
-- [meadow](https://github.com/stevenvelozo/meadow) - Data access layer with automatic REST endpoints
+- [orator](https://github.com/fable-retold/orator) - API server abstraction for REST and IPC
+- [orator-serviceserver-restify](https://github.com/fable-retold/orator-serviceserver-restify) - Restify service server
+- [pict-sessionmanager](https://github.com/fable-retold/pict-sessionmanager) - Client-side session manager for Pict applications
+- [fable](https://github.com/fable-retold/fable) - Application services framework
+- [meadow](https://github.com/fable-retold/meadow) - Data access layer with automatic REST endpoints
 
 ## License
 

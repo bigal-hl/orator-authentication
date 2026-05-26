@@ -91,8 +91,8 @@ npm install @azure/msal-node
 
 ## Related Packages
 
-- [orator](https://github.com/stevenvelozo/orator) - API server abstraction for REST and IPC
-- [orator-serviceserver-restify](https://github.com/stevenvelozo/orator-serviceserver-restify) - Restify service server
-- [pict-sessionmanager](https://github.com/stevenvelozo/pict-sessionmanager) - Client-side session manager for Pict applications
-- [fable](https://github.com/stevenvelozo/fable) - Application services framework
-- [meadow](https://github.com/stevenvelozo/meadow) - Data access layer with automatic REST endpoints
+- [orator](https://github.com/fable-retold/orator) - API server abstraction for REST and IPC
+- [orator-serviceserver-restify](https://github.com/fable-retold/orator-serviceserver-restify) - Restify service server
+- [pict-sessionmanager](https://github.com/fable-retold/pict-sessionmanager) - Client-side session manager for Pict applications
+- [fable](https://github.com/fable-retold/fable) - Application services framework
+- [meadow](https://github.com/fable-retold/meadow) - Data access layer with automatic REST endpoints

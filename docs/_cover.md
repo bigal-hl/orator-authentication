@@ -7,5 +7,5 @@
 - Microsoft-specific MSAL provider for Exchange and Graph API access
 - First-class Fable service provider with zero-config defaults
 
-[GitHub](https://github.com/stevenvelozo/orator-authentication)
+[GitHub](https://github.com/fable-retold/orator-authentication)
 [Get Started](#orator-authentication)

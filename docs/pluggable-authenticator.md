@@ -108,7 +108,7 @@ tmpFable.OratorAuthentication.setAuthenticator(
 
 ### Meadow Integration
 
-If you're using [Meadow](https://github.com/stevenvelozo/meadow) for data access:
+If you're using [Meadow](https://github.com/fable-retold/meadow) for data access:
 
 ```javascript
 tmpFable.OratorAuthentication.setAuthenticator(
