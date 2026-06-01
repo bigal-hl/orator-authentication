@@ -1,6 +1,6 @@
 # Orator Authentication
 
-> **[&#9654; Read the Orator-Authentication Documentation](https://fable-retold.github.io/orator-authentication/)** &mdash; interactive docs with the full API reference.
+> **[Read the Orator-Authentication Documentation](https://fable-retold.github.io/orator-authentication/)** - interactive docs with the full API reference.
 
 > Server-side cookie-based session authentication with pluggable authenticator and optional OAuth/OIDC support
 
