@@ -20,73 +20,15 @@ Fable (Core)
 
 ## Session Lifecycle
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Server as Orator Server
-    participant Auth as OratorAuthentication
-    participant Store as Session Store
-
-    Client->>Server: POST /1.0/Authenticate {UserName, Password}
-    Server->>Auth: _handleAuthentication()
-    Auth->>Auth: Check denied passwords
-    Auth->>Auth: Call _authenticator(username, password)
-    Auth->>Store: _createSession(userRecord)
-    Store-->>Auth: Session {SessionID, UserRecord, CreatedAt}
-    Auth->>Server: Set-Cookie: SessionID=xxx; HttpOnly
-    Server-->>Client: {LoggedIn: true, SessionID, UserRecord}
-
-    Client->>Server: GET /1.0/CheckSession (Cookie: SessionID=xxx)
-    Server->>Auth: getSessionForRequest(request)
-    Auth->>Store: sessionStore.get(sessionID)
-    Store-->>Auth: Session object
-    Auth->>Auth: Check TTL, update LastAccess
-    Server-->>Client: {LoggedIn: true, UserRecord}
-
-    Client->>Server: GET /1.0/Deauthenticate (Cookie: SessionID=xxx)
-    Server->>Auth: _handleDeauthentication()
-    Auth->>Store: _destroySession(sessionID)
-    Auth->>Server: Clear cookie (Expires: epoch)
-    Server-->>Client: {LoggedIn: false}
-```
+<!-- bespoke diagram: edit diagrams/session-lifecycle.mmd or .hints.json, then: npx pict-renderer-graph build modules/orator/orator-authentication/docs -->
+![Session Lifecycle](diagrams/session-lifecycle.svg)
 
 ## OAuth Authorization Code Flow
 
 When OAuth providers are configured, the module implements the standard OAuth 2.0 Authorization Code Flow with PKCE:
 
-```mermaid
-sequenceDiagram
-    participant Browser
-    participant Server as Orator Server
-    participant Auth as OratorAuthentication
-    participant Provider as OAuth Provider<br/>(Google, Microsoft, etc.)
-
-    Browser->>Server: GET /1.0/OAuth/Begin/google
-    Server->>Auth: _handleOAuthBegin('google')
-    Auth->>Auth: Generate state, nonce, PKCE code_verifier
-    Auth->>Auth: Store in _oauthStateStore (5 min TTL)
-    Auth->>Auth: Initialize provider (lazy, cached)
-    Auth->>Provider: Build authorization URL
-    Provider-->>Auth: Authorization URL
-    Auth->>Server: 302 Redirect
-    Server-->>Browser: Redirect to provider login page
-
-    Browser->>Provider: User authenticates
-    Provider-->>Browser: Redirect to /1.0/OAuth/Callback/google?code=...&state=...
-
-    Browser->>Server: GET /1.0/OAuth/Callback/google?code=ABC&state=XYZ
-    Server->>Auth: _handleOAuthCallback('google')
-    Auth->>Auth: _consumeOAuthState(state) - validate & delete
-    Auth->>Provider: Exchange code for tokens (with PKCE verifier)
-    Provider-->>Auth: {Claims, Tokens}
-    Auth->>Auth: _oauthUserMapper(claims, tokens) -> UserRecord
-    Auth->>Auth: _createSession(userRecord) + store OAuthTokens
-    Auth->>Server: Set-Cookie, 302 Redirect to post-login URL
-    Server-->>Browser: Redirect to application
-
-    Browser->>Server: GET /1.0/CheckSession (Cookie: SessionID=xxx)
-    Server-->>Browser: {LoggedIn: true, UserRecord} (same as password login)
-```
+<!-- bespoke diagram: edit diagrams/oauth-authorization-code-flow.mmd or .hints.json, then: npx pict-renderer-graph build modules/orator/orator-authentication/docs -->
+![OAuth Authorization Code Flow](diagrams/oauth-authorization-code-flow.svg)
 
 ## Component Architecture
 
